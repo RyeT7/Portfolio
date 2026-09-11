@@ -1,0 +1,12 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+
+# Supply-chain safety: pnpm will refuse any package version published less than
+# this many MINUTES ago. 10080 minutes = 7 days.
+# Bump/lower this one number to change the buffer. Docs:
+# https://pnpm.io/settings#minimumreleaseage
+minimumReleaseAge: 10080
+
+# Packages exempted from the delay (add names here if you ever need a fresh release):
+minimumReleaseAgeExclude: []
