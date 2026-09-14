@@ -5,17 +5,18 @@ export interface FloorMeta {
   label: string;
   level: number;
   hint?: string;
+  accent?: string;
 }
 
-/** Shape of a `import()`ed floor module. */
 export interface FloorModule {
   meta: FloorMeta;
   defaultComponent: ComponentType;
 }
 
-/** A registered floor: its metadata plus the component to render. */
 export interface Floor extends FloorMeta {
   Component: ComponentType;
 }
 
 export type Direction = 'up' | 'down';
+
+export type ElevatorPhase = 'idle' | 'closing' | 'traveling' | 'opening';

@@ -5,8 +5,13 @@ export const elevatorConfig = {
   maxTravelMs: 2400,
 
   doors: true,
-
-  soundOnByDefault: true,
+  doorCloseMs: 550,
+  doorOpenMs: 650,
 
   startFloor: 'lowest' as string,
 } as const;
+
+export function getTravelDuration(distance: number): number {
+  const raw = elevatorConfig.baseTravelMs + elevatorConfig.perFloorMs * Math.abs(distance);
+  return Math.min(elevatorConfig.maxTravelMs, Math.max(elevatorConfig.minTravelMs, raw));
+}
