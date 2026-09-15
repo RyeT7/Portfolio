@@ -184,10 +184,6 @@ body,
   transition: color 0.2s ease, filter 0.2s ease;
 }
 
-.ev-arrow--down {
-  transform: rotate(180deg);
-}
-
 .ev-arrow.is-lit {
   color: var(--ev-amber);
   filter: drop-shadow(0 0 4px var(--ev-amber));
@@ -250,11 +246,11 @@ body,
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 640px;
+  justify-content: safe center;
+  gap: 1.5rem;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 3.25rem 0;
 }
 
 .floor h1 {
@@ -302,4 +298,262 @@ body,
     overflow-x: auto;
     overflow-y: hidden;
   }
+}
+
+.floor-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d7d7d3;
+}
+
+.floor-meta {
+  font-family: var(--ev-font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #8d8f96;
+}
+
+.floor section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.floor h2 {
+  font-family: var(--ev-font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ev-amber);
+  margin: 1.5rem 0 -0.25rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: var(--ev-font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  color: #cfd1d6;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.35rem 1.5rem;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 2px solid var(--ev-metal-light);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.project:hover {
+  border-left-color: var(--ev-amber);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project h3 {
+  margin: 0;
+  font-family: var(--ev-font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.project h3 a {
+  color: #f0f0ec;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.project h3 a:hover {
+  color: var(--ev-amber);
+  border-bottom-color: var(--ev-amber);
+}
+
+.project p {
+  font-size: 0.92rem;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 0.5rem 1rem;
+  align-items: start;
+}
+
+.skill-row > span {
+  font-family: var(--ev-font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8d8f96;
+  padding-top: 4px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #e8e8e6;
+  text-decoration: none;
+  font-size: 0.95rem;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+}
+
+.links a:hover {
+  color: var(--ev-amber);
+  border-bottom-color: var(--ev-amber);
+}
+
+@media (max-width: 560px) {
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .skill-row > span {
+    padding-top: 0;
+  }
+}
+
+/* ---------- Profile header ---------- */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* Shared by the placeholder and a real <img>, so swapping one in needs no CSS change. */
+.profile-photo {
+  flex-shrink: 0;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ev-metal-light);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.profile-photo.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ev-metal-light);
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  font-family: var(--ev-font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--ev-accent, var(--ev-amber));
+}
+
+.profile-roles span,
+.meta-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Icon-labelled metadata, replacing dot-separated runs. */
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  font-family: var(--ev-font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: #8d8f96;
+}
+
+.meta-list svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+@media (max-width: 560px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profile-photo {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+/* ---------- Experience entries ---------- */
+
+.role {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.4rem 0 0.6rem 1.35rem;
+  border-left: 2px solid var(--ev-metal-light);
+}
+
+.role.is-current {
+  border-left-color: var(--ev-accent, var(--ev-amber));
+}
+
+.role h3 {
+  margin: 0;
+  font-family: var(--ev-font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: #f0f0ec;
+}
+
+.role-org {
+  font-size: 0.95rem;
+  color: #cfcfcc;
+}
+
+.role ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.role li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #cfcfcc;
+}
+
+.role li::marker {
+  color: var(--ev-metal-light);
 }

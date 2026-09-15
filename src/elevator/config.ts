@@ -8,7 +8,8 @@ export const elevatorConfig = {
   doorCloseMs: 550,
   doorOpenMs: 650,
 
-  startFloor: 'lowest' as string,
+  /** Floor id, or 'lowest' / 'highest'. Visitors should arrive in the lobby. */
+  startFloor: 'AboutMe' as string,
 } as const;
 
 export function getTravelDuration(distance: number): number {
