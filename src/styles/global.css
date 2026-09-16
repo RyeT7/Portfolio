@@ -160,22 +160,31 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 12px;
   width: 100%;
-  background: #0b0c0e;
-  border-radius: 6px;
-  padding: 8px 4px;
   flex-shrink: 0;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9), 0 1px 0 rgba(255, 255, 255, 0.06);
+  padding: 20px 16px;
+  border-radius: 7px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  background: linear-gradient(180deg, #131418 0%, #08090b 58%, #101116 100%);
+  box-shadow:
+    inset 0 4px 10px rgba(0, 0, 0, 0.95),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .ev-digit {
   font-family: var(--ev-font-display);
-  font-size: 1.5rem;
+  font-size: 2.75rem;
   line-height: 1;
   color: var(--ev-amber);
-  text-shadow: 0 0 6px var(--ev-amber), 0 0 16px rgba(255, 176, 32, 0.55);
-  min-width: 1.3em;
+  text-shadow:
+    0 0 3px rgba(255, 220, 150, 0.9),
+    0 0 10px var(--ev-amber),
+    0 0 24px rgba(255, 176, 32, 0.6),
+    0 0 44px rgba(255, 176, 32, 0.3);
+  min-width: 1.5em;
   text-align: center;
 }
 
@@ -187,7 +196,7 @@ body,
 
 .ev-arrow.is-lit {
   color: var(--ev-amber);
-  filter: drop-shadow(0 0 4px var(--ev-amber));
+  filter: drop-shadow(0 0 5px var(--ev-amber)) drop-shadow(0 0 14px rgba(255, 176, 32, 0.55));
 }
 
 
@@ -419,6 +428,13 @@ body,
   .ev-indicator {
     width: auto;
     flex-shrink: 0;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .ev-digit {
+    font-size: 1.6rem;
+    min-width: 1.4em;
   }
 
   .ev-buttons {
