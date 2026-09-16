@@ -8,7 +8,6 @@ export const elevatorConfig = {
   doorCloseMs: 550,
   doorOpenMs: 650,
 
-  /** Floor id, or 'lowest' / 'highest'. Visitors should arrive in the lobby. */
   startFloor: 'AboutMe' as string,
 } as const;
 

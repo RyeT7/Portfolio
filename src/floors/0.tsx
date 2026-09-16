@@ -33,6 +33,6 @@ export const meta: FloorMeta = {
     id: 'AboutMe',
     level: 0,
     label: 'About Me',
-    hint: 'The lobby — who I am and what I work on.',
+    hint: 'The lobby - who I am and what I work on.',
     accent: '#ffb020',
 }

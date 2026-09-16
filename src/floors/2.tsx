@@ -35,7 +35,7 @@ export const defaultComponent: ComponentType = () => {
             <h2>Certification</h2>
 
             <article className="role">
-                <h3>Alibaba Cloud Certified Associate — Cloud Engineer</h3>
+                <h3>Alibaba Cloud Certified Associate - Cloud Engineer</h3>
                 <div className="meta-list">
                     <span><FaCertificate aria-hidden="true" />Issued May 2025</span>
                     <span><FaRegCalendarAlt aria-hidden="true" />Valid through May 2027</span>
